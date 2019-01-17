@@ -5,6 +5,8 @@ import { DebugConfiguration } from '@aurelia/debug';
 import { BasicConfiguration } from '@aurelia/jit-html-browser';
 import { Aurelia, } from '@aurelia/runtime';
 
+import { DragScroll } from './attributes/dragscroll';
+
 import { App } from './app';
 
 const container = BasicConfiguration.createContainer();
@@ -14,6 +16,7 @@ container.register(
     FilterType as any,
     Post as any,
     PhoneBody as any,
+    DragScroll as any
 );
 
 window['au'] = new Aurelia(container)
