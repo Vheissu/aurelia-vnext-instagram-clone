@@ -1,7 +1,7 @@
-import { inject } from '@aurelia//kernel';
 import { customElement, bindable } from '@aurelia/runtime';
-import { Router } from '@aurelia/router';
 import template from './Post.html';
+
+import './Post.css';
 
 @customElement({
     name: 'post',
@@ -11,6 +11,7 @@ export class Post {
     @bindable public post;
 
     like() {
-
+        this.post.hasBeenLiked ? this.post.likes-- : this.post.likes++;
+        this.post.hasBeenLiked = !this.post.hasBeenLiked;
     }
 }

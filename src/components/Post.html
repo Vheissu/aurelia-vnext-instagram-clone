@@ -1,27 +1,24 @@
-<template>
-    <template>
-        <div class="aureliaagram-post">
-            <div class="header level">
-                <div class="level-left details">
-                    <figure class="image is-32x32">
-                        <img src.bind="post.userImage">
-                    </figure>
-                    <span click.delegate="like()" class="username">${post.username}</span>
-                </div>
-            </div>
-            <div dblclick.delegate="like()">
-                <div class="image-container" class.bind="post.filter" css="backgroundImage: url(${post.postImage});"></div>
-            </div>
-
-            <div class="content">
-                <div class="heart">
-                    <i class="far fa-heart fa-lg ${post.hasBeenLiked ? 'fas' : ''}" click.delegate="like()"></i>
-                </div>
-                <p class="likes">${post.likes} likes</p>
-                <p class="caption">
-                    <span>${post.username}</span>
-                    ${post.caption}
-                </p>
-            </div>
+<div class="aureliagram-post">
+    <div class="header level">
+        <div class="level-left details">
+            <figure class="image is-32x32">
+                <img src="${post.userImage}">
+            </figure>
+            <span click.delegate="like()" class="username">${post.username}</span>
         </div>
-    </template>
+    </div>
+    <div dblclick.delegate="like()">
+        <div class="image-container" class.bind="post.filter" css="backgroundImage: url(${post.postImage});"></div>
+    </div>
+
+    <div class="content">
+        <div class="heart">
+            <i class="far fa-heart fa-lg ${post.hasBeenLiked ? 'fas' : ''}" click.delegate="like()"></i>
+        </div>
+        <p class="likes">${post.likes} likes</p>
+        <p class="caption">
+            <span>${post.username}</span>
+            ${post.caption}
+        </p>
+    </div>
+</div>

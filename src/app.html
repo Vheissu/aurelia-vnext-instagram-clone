@@ -1,5 +1,30 @@
-<template>
-    <div>
-        <au-viewport></au-viewport>
+<div id="main">
+    <div class="app-phone">
+      <div class="phone-header">
+        <img src="./assets/aureliagram.png">
+        <a class="cancel-cta" if.bind="step === 2 || step === 3" click.delegate="goToHome()">Cancel</a>
+        <a class="next-cta" v-if="step === 2" click.delegate="step++">Next</a>
+        <a class="next-cta" v-if="step === 3" click.delegate="sharePost()">Share</a>
+      </div>
+      <phone-body step.bind="step" posts.bind="posts" filters.bind="filters" image.bind="image" selected-filter.bind="selectedFilter" model.bind="caption"></phone-body>
+      <div class="phone-footer">
+        <div class="home-cta" click.delegate="goToHome()">
+          <i class="fas fa-home fa-lg"></i>
+        </div>
+        <div class="upload-cta">
+          <input
+            type="file"
+            name="file"
+            id="file"
+            ref="file"
+            class="inputfile"
+            change.delegate="uploadImage($event)"
+            disabled.bind="step !== 1"
+          >
+          <label for="file">
+            <i class="far fa-plus-square fa-lg"></i>
+          </label>
+        </div>
+      </div>
     </div>
-</template>
+  </div>

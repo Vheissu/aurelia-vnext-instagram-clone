@@ -1,16 +1,19 @@
+import { PhoneBody } from './components/PhoneBody';
+import { Post } from './components/Post';
+import { FilterType } from './components/FilterType';
 import { DebugConfiguration } from '@aurelia/debug';
 import { BasicConfiguration } from '@aurelia/jit-html-browser';
-import { Aurelia, IDOM } from '@aurelia/runtime';
-import { NavCustomElement, ViewportCustomElement } from '@aurelia/router';
+import { Aurelia, } from '@aurelia/runtime';
 
 import { App } from './app';
 
 const container = BasicConfiguration.createContainer();
 
 container.register(
-    ViewportCustomElement as any,
-    NavCustomElement as any,
     App as any,
+    FilterType as any,
+    Post as any,
+    PhoneBody as any,
 );
 
 window['au'] = new Aurelia(container)

@@ -1,0 +1,23 @@
+<div class="phone-body">
+  <div if.bind="step === 1" class="feed">
+    <post repeat.for="post of posts" post.bind="post"></post>
+  </div>
+  <div if.bind="step === 2">
+    <div class="selected-image ${selectedFilter}" css="backgroundImage: url(${image});"></div>
+    <div class="filter-container">
+      <filter-type repeat.for="filter of filters" filter.bind="filter" image.bind="image"></filter-type>
+    </div>
+  </div>
+  <div if.bind="step === 3">
+    <div class="selected-image ${selectedFilter}" css="backgroundImage: url(${image});"></div>
+    <div class="caption-container">
+      <textarea
+        class="caption-input"
+        placeholder="Write a caption..."
+        type="text"
+        value.bind="value"
+        input.delegate="captionChanged($event.target.value)"
+      ></textarea>
+    </div>
+  </div>
+</div>
