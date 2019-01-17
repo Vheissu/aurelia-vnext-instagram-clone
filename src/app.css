@@ -29,6 +29,7 @@ body,
     top: 0;
     background: #fafafa;
     border-bottom: 1px solid #eeeeee;
+    padding: 10px 0;
     z-index: 99;
 
     img {
