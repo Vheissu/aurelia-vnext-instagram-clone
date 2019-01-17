@@ -3,7 +3,7 @@
       <div class="phone-header">
         <img src="./assets/aureliagram.png">
         <a class="cancel-cta" if.bind="step === 2 || step === 3" click.delegate="goToHome()">Cancel</a>
-        <a class="next-cta" v-if="step === 2" click.delegate="step++">Next</a>
+        <a class="next-cta" v-if="step === 2" click.delegate="step=step+1">Next</a>
         <a class="next-cta" v-if="step === 3" click.delegate="sharePost()">Share</a>
       </div>
       <phone-body step.bind="step" posts.bind="posts" filters.bind="filters" image.bind="image" selected-filter.bind="selectedFilter" model.bind="caption"></phone-body>

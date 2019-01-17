@@ -3,13 +3,13 @@
     <post repeat.for="post of posts" post.bind="post"></post>
   </div>
   <div if.bind="step === 2">
-    <div class="selected-image ${selectedFilter}" css="backgroundImage: url(${image});"></div>
+    <div class="selected-image ${selectedFilter}" style="background-image: url(${image});"></div>
     <div class="filter-container">
-      <filter-type repeat.for="filter of filters" filter.bind="filter" image.bind="image"></filter-type>
+      <filter-type repeat.for="filter of filters" filter.bind="filter" image.bind="image" selected-filter.call="filterChanged(name)"></filter-type>
     </div>
   </div>
   <div if.bind="step === 3">
-    <div class="selected-image ${selectedFilter}" css="backgroundImage: url(${image});"></div>
+    <div class="selected-image ${selectedFilter}" style="background-image: url(${image});"></div>
     <div class="caption-container">
       <textarea
         class="caption-input"

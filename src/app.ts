@@ -4,6 +4,9 @@ import app from './app.html';
 
 import './app.css';
 
+import filters from './data/filters';
+import posts from './data/posts';
+
 @customElement({
     name: 'app', 
     template: app
@@ -13,8 +16,8 @@ export class App {
     private selectedFilter = '';
     private caption = '';
     private step = 1;
-    private posts = [];
-    private filters = [];
+    private posts: any[] = posts;
+    private filters: any[] = filters;
     private filterType;
     private file: any;
 
@@ -25,7 +28,7 @@ export class App {
         this.step = 1;
     }
 
-    uploadIamge(evt: any) {
+    uploadImage(evt: any) {
         const files = evt.target.files;
 
         if (!files.length) {

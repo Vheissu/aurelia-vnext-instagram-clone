@@ -14,6 +14,6 @@ export class FilterType {
     @bindable selectedFilter;
 
     selectedFilterTrigger() {
-        this.selectedFilter(this.filter.name);
+        this.selectedFilter({name: this.filter.name});
     }
 }

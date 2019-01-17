@@ -9,10 +9,6 @@
 .aureliagram-post {
     padding: 5px 0;
 
-    .details {
-        margin-top: 23px;
-    }
-
     .header {
         height: 30px;
         border-bottom: 1px solid #fff;
@@ -44,7 +40,6 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-        z-index: -1;
     }
 
     .content {

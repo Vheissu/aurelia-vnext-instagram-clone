@@ -16,6 +16,10 @@ export class PhoneBody {
     @bindable selectedFilter;
     @bindable value;
 
+    filterChanged(name) {
+        this.selectedFilter = name;
+    }
+
     captionChanged(caption) {
 
     }
