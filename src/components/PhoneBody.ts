@@ -1,4 +1,4 @@
-import { bindable, customElement } from "@aurelia/runtime";
+import { bindable, customElement, containerless } from "@aurelia/runtime";
 
 import template from './PhoneBody.html';
 
@@ -8,7 +8,9 @@ import './PhoneBody.css';
     name: 'phone-body',
     template
 })
+@containerless()
 export class PhoneBody {
+    @bindable caption;
     @bindable step;
     @bindable posts;
     @bindable filters;
@@ -21,6 +23,6 @@ export class PhoneBody {
     }
 
     captionChanged(caption) {
-
+        this.caption = caption;
     }
 }

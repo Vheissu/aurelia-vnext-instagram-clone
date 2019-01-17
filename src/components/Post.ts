@@ -1,4 +1,4 @@
-import { customElement, bindable } from '@aurelia/runtime';
+import { customElement, bindable, containerless } from '@aurelia/runtime';
 import template from './Post.html';
 
 import './Post.css';
@@ -7,6 +7,7 @@ import './Post.css';
     name: 'post',
     template: template
 })
+@containerless()
 export class Post {
     @bindable public post;
 

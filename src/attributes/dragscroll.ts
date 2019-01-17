@@ -7,9 +7,7 @@ const POINTER_START_EVENTS = ['mousedown', 'touchstart'];
 const POINTER_MOVE_EVENTS = ['mousemove', 'touchmove'];
 const POINTER_END_EVENTS = ['mouseup', 'touchend'];
 
-@customAttribute({
-    name: 'dragscroll'
-})
+@customAttribute('dragscroll')
 export class DragScroll {
     private lastClientX;
     private lastClientY;
@@ -25,9 +23,7 @@ export class DragScroll {
 
     static inject = [Element];
 
-    constructor(private element: Element) {
-
-    }
+    constructor(private element: Element) { }
 
     attached() {
         for (const startEvent of POINTER_START_EVENTS) {
